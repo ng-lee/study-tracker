@@ -13,3 +13,9 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+  profiles:
+    include: oauth2
+
+cors:
+  allowed-origin: ${ALLOWED_ORIGIN:http://localhost:5173}
