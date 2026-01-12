@@ -20,9 +20,5 @@ class Member(
     var name: String,
 
     @Column(nullable = false)
-    var email: String,
-
-    @Enumerated(value = EnumType.STRING)
-    @Column(nullable = false)
-    var provider: ProviderType,
+    var email: String
 ) : BaseEntity()
