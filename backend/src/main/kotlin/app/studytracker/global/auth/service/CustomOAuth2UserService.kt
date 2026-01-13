@@ -27,6 +27,7 @@ class CustomOAuth2UserService(
 
         // 소셜 로그인 타입
         val registrationId = userRequest.clientRegistration.registrationId
+        val provider = ProviderType.getProvider(registrationId)
         val attributes = oAuth2User.attributes
 
         // 소셜 타입별 유저 정보 파싱
@@ -42,10 +43,10 @@ class CustomOAuth2UserService(
             )
         )
 
-        memberSnsRepository.findByProviderAndProviderId(registrationId, providerId) ?: memberSnsRepository.save(
+        memberSnsRepository.findByProviderAndProviderId(provider, providerId) ?: memberSnsRepository.save(
             MemberSns(
                 member = member,
-                provider = ProviderType.getProvider(registrationId),
+                provider = provider,
                 providerId = providerId
             )
         )
