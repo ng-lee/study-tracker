@@ -5,7 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.oauth2.core.user.OAuth2User
 
 data class CustomOAuth2User(
-    val id: Long,
+    val idx: Long,
     val email: String,
     val userName: String,
     val extraAttributes: Map<String, Any>,
@@ -19,6 +19,6 @@ data class CustomOAuth2User(
     }
 
     override fun getName(): String {
-        return id.toString()
+        return idx.toString()
     }
 }

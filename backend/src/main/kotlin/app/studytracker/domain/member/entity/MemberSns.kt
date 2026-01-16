@@ -17,10 +17,10 @@ import jakarta.persistence.ManyToOne
 class MemberSns(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0L,
+    var idx: Long = 0L,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
+    @JoinColumn(name = "member_idx", nullable = false)
     var member: Member,
 
     @Enumerated(EnumType.STRING)

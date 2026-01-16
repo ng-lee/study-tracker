@@ -14,7 +14,7 @@ import jakarta.persistence.Id
 class Member(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0L,
+    var idx: Long = 0L,
 
     @Column(nullable = false, length = 30)
     var name: String,
